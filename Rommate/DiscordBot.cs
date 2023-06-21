@@ -29,6 +29,7 @@ namespace Rommate
             slash.RegisterCommands<SlashCommands>();
 
             discordClient.ComponentInteractionCreated += ButtonResponse.ButtonPressResponse;
+            discordClient.ModalSubmitted += ModalResponse.ModalRespose;
 
             await discordClient.ConnectAsync();
             await Task.Delay(-1);

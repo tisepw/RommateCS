@@ -68,6 +68,20 @@ namespace Rommate
             await SendAsyncResponse(ctx, builder);
         }
 
+        [SlashCommand("textinput", "Text input test")]
+        public static async Task StrTest(InteractionContext ctx)
+        {
+            builder.AddEmbed(new DiscordEmbedBuilder()
+            {
+                Color = DiscordColor.Cyan,
+                Title = "Text input"
+            });
+
+            builder.AddComponents(CustomButtons.textInputPopUp);
+
+            await SendAsyncResponse(ctx, builder);
+        }
+
         [SlashCommand("checkAdminPriveleges", "Check admin priveleges")]
         [SlashRequireUserPermissions(Permissions.Administrator)]
         public static async Task CheckAdminPriveleges(InteractionContext ctx)

@@ -15,5 +15,7 @@ namespace Rommate
 
         public static readonly DiscordButtonComponent[] ButtonGroupTest = { buttonPrimary, buttonSecondary, buttonInvalid };
         #endregion
+
+        public static readonly DiscordButtonComponent textInputPopUp = new(ButtonStyle.Primary, "TextInputPopUp", "Text Input");
     }
 }

@@ -25,6 +25,13 @@ namespace Rommate
                         .AddComponents(CustomButtons.ButtonGroupTest));
                     return;
 
+                case "TextInputPopUp":
+                    await args.Interaction.CreateResponseAsync(InteractionResponseType.Modal, new DiscordInteractionResponseBuilder()
+                        .WithTitle("Test")
+                        .WithCustomId("TextInputTest")
+                        .AddComponents(new TextInputComponent("Text input test", "TextInputTest")));
+                    return;
+
                 default:
                     await InteractionResponseAsync(args, new DiscordInteractionResponseBuilder()
                         .WithContent("Internal error: Invalid button ID! Information has been sent to the developer.")
