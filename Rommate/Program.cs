@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿// Copyright (c) Tise <vladden500@gmail.com>. Licensed under the MIT Licence.
+// See the LICENCE file in the repository root for full licence text.
+
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace Rommate
