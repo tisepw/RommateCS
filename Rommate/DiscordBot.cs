@@ -1,4 +1,7 @@
-﻿using DSharpPlus;
+﻿// Copyright (c) Tise <vladden500@gmail.com>. Licensed under the MIT Licence.
+// See the LICENCE file in the repository root for full licence text.
+
+using DSharpPlus;
 using DSharpPlus.SlashCommands;
 
 namespace Rommate
