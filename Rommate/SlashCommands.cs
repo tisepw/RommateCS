@@ -22,7 +22,7 @@ namespace Rommate
                 Description = $"WS latency: {ctx.SlashCommandsExtension.Client.Ping}ms"
             });
 
-            await AsyncResponse(ctx, builder);
+            await SendAsyncResponse(ctx, builder);
         }
 
         public enum Number
@@ -51,7 +51,7 @@ namespace Rommate
                 Description = $"{user.Mention}, number: {number.GetName()}"
             });
 
-            await AsyncResponse(ctx, builder);
+            await SendAsyncResponse(ctx, builder);
         }
 
         [SlashCommand("buttontest", "Test button feature")]
@@ -65,7 +65,7 @@ namespace Rommate
 
             builder.AddComponents(CustomButtons.ButtonGroupTest);
 
-            await AsyncResponse(ctx, builder);
+            await SendAsyncResponse(ctx, builder);
         }
 
         [SlashCommand("checkAdminPriveleges", "Check admin priveleges")]
@@ -78,14 +78,12 @@ namespace Rommate
                 Title = "You're admin, yay!"
             });
 
-            await AsyncResponse(ctx, builder);
+            await SendAsyncResponse(ctx, builder);
         }
 
-        private static async Task AsyncResponse(InteractionContext _ctx, DiscordInteractionResponseBuilder _builder)
+        private static async Task SendAsyncResponse(InteractionContext _ctx, DiscordInteractionResponseBuilder _builder)
         {
-            await _ctx.CreateResponseAsync(
-                InteractionResponseType.ChannelMessageWithSource,
-                _builder);
+            await _ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, _builder);
 
             builder.Clear();
         }
